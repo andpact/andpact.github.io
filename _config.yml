@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "I'm andpact"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Person who want to make an IMPACT"
   location         : "Republic of Korea"
   email            : 
