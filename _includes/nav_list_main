@@ -12,16 +12,16 @@
       </li>
       <li>
         <span class="nav__sub-title">Project</span>
-                <!-- {% for category in site.categories %}
+                {% for category in site.categories %}
                     {% if category[0] == "WID" %}
-                        <li><a href="/categories/WID" class="">WID({{category[1].size}})</a></li>
+                        <li><a href="/categories/WID" class="">WID ({{category[1].size}})</a></li>
                     {% endif %}
-                {% endfor %} -->
+                {% endfor %}
         <span class="nav__sub-title">Problem Solving</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "LeetCode" %}
-                        <li><a href="/categories/LeetCode" class="">LeetCode({{category[1].size}})</a></li>
+                        <li><a href="/categories/LeetCode" class="">LeetCode ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
