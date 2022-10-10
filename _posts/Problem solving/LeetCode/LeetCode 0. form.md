@@ -1,5 +1,5 @@
 ---
-title: "[LeetCode]  with java"
+title: "[LeetCode] "
 excerpt: "LeetCode 번 문제와 솔루션"
 
 categories:
