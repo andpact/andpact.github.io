@@ -11,7 +11,7 @@ toc: true
 toc_sticky: true
  
 date: 2022-10-29
-last_modified_at: 2022-10-29
+last_modified_at: 2022-10-31
 ---
 
 개인적인 의견이 포함되어 있고, 잘못된 정보가 있을 수 있습니다.
@@ -69,13 +69,30 @@ last_modified_at: 2022-10-29
 
 <!-- ## **스프링(Spring)** -->
 
+<!-- ## **스프링부트(Spring Boot)** -->
+
 ## **MVC 패턴(Model, View, Controller)**
 - 프로그램 디자인 방식 중 하나
 - Model : 데이터베이스 관리
 - View : 화면 출력
 - Controller : Model과 View사이의 데이터 교환
 
+## **MVC1, MVC2 패턴**
+- MVC1 : 화면 출력과 데이터 교환을 모두 JSP에서 처리하는 구조
+- MVC2 : 화면 출력은 JSP가 담당하고, 데이터 교환은 서블릿이 담당하는 구조
+
+<!-- ## **스프링 MVC 구조 흐름** -->
+
 <!-- ## **관점 지향 프로그래밍(Aspect Oriented Programming)** -->
 
 ## **의존성 주입(Dependency Injection)**
-- 의존성이 높은 객체를 클래스에 삽입하여 사용하는 것
+- 의존성이 높아 여러곳에서 사용되는 객체를 클래스에 삽입하여 사용하는 것
+
+<!-- ## **스프링 필터랑 인터셉터** -->
+
+## **IOC(Inversion of Control)**
+- 인스턴스의 생성부터 소멸까지의 단계를 개발자가 아닌 컨테이너가 대신 관리해주는 것
+
+## **DAO와 DTO**
+- DAO : DB에 접근하기 위해 SQL을 실행하는 객체
+- DTO : MVC 계층 간의 데이터 교환에 사용되는 객체 VO는 read only특징을 가진점이 다르다.
