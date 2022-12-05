@@ -1,9 +1,9 @@
 ---
-title: "[Interview] Java & Spring"
-excerpt: "Java & Spring 정리"
+title: "[Shorts] Java & Spring"
+excerpt: "Java & Spring 짧게 정리"
 
 categories:
-  - Interview
+  - Shorts
 tags:
   - 
 
@@ -11,7 +11,7 @@ toc:
 toc_sticky:
  
 date: 2022-10-29
-last_modified_at: 2022-11-26
+last_modified_at: 2022-11-28
 ---
 
 개인적인 의견이 포함되어 있고, 잘못된 정보가 있을 수 있습니다.
@@ -352,3 +352,17 @@ last_modified_at: 2022-11-26
 - 이전보다 코드가 짧아져 개발 시간을 단축시킬 수 있다.
 <!-- -  -->
 
+## **Ajax(Asynchronous javaScript and XML)**
+- URL을 사용하지 않고 서버와 데이터를 주고 받는 방식
+- 화면의 변화 없이 서버와 통신이 필요할 때(자동완성 등) 사용한다.
+<!-- -  -->
+
+## **JSON(Javascript object notation)**
+- JS에서 객체를 키와 값의 형태로 표현하는 문자열
+- 클라이언트에서 서버로부터 정보를 일관된 형태로 받기 위해 JSON을 사용한다.
+
+## **REST(Representational state transfer)**
+- 클라이언트와 서버가 어떻게 데이터를 주고받을지에 관한 가이드, 방식
+- 원하는 자원(URL)과 작업(Get, Post...)을 나누어 효율을 높이고 통일하기 위해 REST 방식을 사용한다.
+
+<!-- ## **** -->

@@ -1,11 +1,11 @@
 ---
-title: "Interview"
+title: "JavaSpring"
 layout: archive
-permalink: categories/Interview
+permalink: categories/JavaSpring
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.Interview %}
+{% assign posts = site.categories.JavaSpring %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}
