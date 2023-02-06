@@ -104,7 +104,7 @@ analytics:
 author:
   name             : "I'm andpact"
   avatar           : "/assets/images/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Person who want to make an IMPACT"
+  bio              : "Software Engineer using Java & Spring"
   location         : "Republic of Korea"
   email            : 
   links:
