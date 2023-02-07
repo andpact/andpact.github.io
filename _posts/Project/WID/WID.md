@@ -11,29 +11,29 @@ toc:
 toc_sticky: 
  
 date: 2022-10-03
-last_modified_at: 2023-02-06
+last_modified_at: 2023-02-07
 ---
 # **WID**
 **What I Did** or **What I'll Do**
 
 # **Request - Response Table**
-|URL|Method|기능|
+|URL|Method|Function|
 |:---:|:---:|:---:|
-|/quest/|POST|Quest 등록|
-|/quest/{qno}|GET|단일 Quest 조회|
-|/quest/list|GET|전체 Quest 조회|
-|/quest/{qno}|PUT|Quest 수정|
-|/quest/{qno}|DELETE|Quest 삭제|
-|/record/|POST|Record 등록|
-|/record/{rno}|GET|단일 Record 조회|
-|/record/list|GET|전체 Record 조회|
-|/record/{rno}|PUT|Record 수정|
-|/record/{rno}|DELETE|Record 삭제|
+|/quest/|POST|Create Quest|
+|/quest/{qno}|GET|Read Quest|
+|/quest/list|GET|Read All Quests|
+|/quest/{qno}|PUT|Update Quest|
+|/quest/{qno}|DELETE|Delete Quest|
+|/record/|POST|Create Record|
+|/record/{rno}|GET|Read Record|
+|/record/list|GET|Read All Records|
+|/record/{rno}|PUT|Update Record|
+|/record/{rno}|DELETE|Delete Record|
 
 <!-- # **Wire Frame** -->
 
 # **History**
-**2023.02.05**
+**2023.02.05**<br>
 Quest CRUD 기능 작성
 - Quest : 해야 할 일 혹은 계획을 의미
 - DB 생성과 Entity 작성
@@ -86,7 +86,7 @@ Build Quest CRUD function test code
   - Build Repository, Service object, and Controller test code
     1. Execute Repository, Service, and Controller's CURD method to test from injected Repository, Service, and Controller, with creating arbitrary DTO, Entity, or using object existing -->
 
-**2023.02.06**
+**2023.02.06**<br>
 Record CRUD 기능 작성
 - Record : 과거에 했던 일, 시간을 어떻게 보냈는지 의미
 - DB 생성과 Entity 작성
@@ -115,7 +115,7 @@ Record CRUD 기능 Test 코드 작성
   - Repository, Service 객체, Controller의 Test 코드 작성
     1. Repository, Service, Controller를 주입 받고, 임의의 DTO, Entity 생성 혹은 기존의 객체를 사용하여 Repository, Service, Controller의 CURD 메서드를 실행하여 테스트 진행
 
-Build a Record CRUD function
+<!-- Build a Record CRUD function
 - Record: What you did in the past, how you spent your time
 - Create DB and Build Entity
   - rno(entity number)
@@ -141,4 +141,40 @@ Build a Record CRUD function
 
 Build Record CRUD function test code
   - Build Repository, Service object, and Controller test code
-  1. Execute Repository, Service, and Controller's CURD method to test from injected Repository, Service, and Controller, with creating arbitrary DTO, Entity, or using object existing
+  1. Execute Repository, Service, and Controller's CURD method to test from injected Repository, Service, and Controller, with creating arbitrary DTO, Entity, or using object existing -->
+
+**2023.02.07**<br>
+Quest DB 변경
+1. 열 추가
+  - date(날짜)
+  - category(카테고리)
+  - start(시작 시간)
+  - finish(종료 시간)
+  - degree(정도)
+2. 열 삭제
+  - dueDate(기한)
+  - finished(완료 여부)
+
+Quest DB 변경에 따른 DTO, Controller, Service, Repository, Entity 코드 및 테스트 코드 변경
+
+<!-- Quest DB Modification
+1. Add column
+  - date
+  - category
+  - start(start time)
+  - finish(end time)
+  - degree
+2. Delete column
+  - dueDate
+  - finished
+
+Change DTO, Controller, Service, Repository, Entity code and test code according to Quest DB change -->
+
+
+
+
+
+
+<!-- - Quest등록하고, Degree(%)에 변경을 줌으로써 얼만큼 해결했는지를 표시함.
+- Quest 최초 등록 시 Degree는 0%
+- Degree가 100%인 상태가 Done상태 -->
