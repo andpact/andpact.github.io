@@ -43,9 +43,14 @@
                 {% endfor %}
                 {% for category in site.categories %}
                     {% if category[0] == "DataStructure" %}
-                        <li><a href="/categories/DataStructure" class="">Data Structure ({{category[1].size}})</a></li>
+                        <li><a href="/categories/DataStructure" class="">DataStructure ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
+                {% for category in site.categories %}
+                {% if category[0] == "Algorithm" %}
+                    <li><a href="/categories/Algorithm" class="">Algorithm ({{category[1].size}})</a></li>
+                {% endif %}
+            {% endfor %}
             </ul>
         <span class="nav__sub-title">Etc</span>
             <ul>
