@@ -1,1 +1,5 @@
-main: []
+main:
+  - title: "Git"
+    url: /categories/git/
+  - title: "Android Studio"
+    url: /categories/androidstudio/

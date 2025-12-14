@@ -3,3 +3,15 @@ remote_theme: mmistakes/minimal-mistakes
 
 plugins:
   - jekyll-include-cache
+
+collections:
+  categories:
+    output: true
+    permalink: /categories/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: categories
+    values:
+      layout: category
