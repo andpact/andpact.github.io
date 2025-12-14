@@ -52,9 +52,43 @@ git branch -m main
 
 - `git branch -m main`은 브랜치를 main으로 변경합니다. GitHub Pages는 main 브랜치 기준으로 자동 배포됩니다.
 
-## 3. 첫 게시물 준비 및 업로드
+## 3. Jekyll 설치 및 번들 설정
 
-### 3-1. _posts 폴더 생성
+### 3-1. Gemfile 생성
+
+- 블로그 루트 폴더에 `Gemfile`을 생성합니다:
+
+```bash
+bundle init
+```
+
+- `Gemfile` 내용 예시:
+
+```bash
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+```
+
+### 3-2. 번들 설치
+
+```bash
+bundle install --path vendor/bundle
+```
+
+- `--path vendor/bundle` 옵션은 시스템 루비가 아닌 로컬 폴더에 Gem을 설치합니다.
+
+### 3-3. 로컬 서버 실행
+
+```bash
+bundle exec jekyll serve
+```
+
+- 브라우저에서 `http://127.0.0.1:4000` 접속하면 로컬 블로그를 확인할 수 있습니다.
+- 변경 사항은 자동으로 반영됩니다.
+
+## 4. 첫 게시물 준비 및 업로드
+
+### 4-1. _posts 폴더 생성
 
 - **GUI 방법**: 로컬 블로그 폴더 안에 `_posts`라는 새 폴더를 만듭니다.
 - **터미널 방법**:
@@ -63,7 +97,7 @@ git branch -m main
 mkdir _posts
 ```
 
-### 3-2. 첫 게시물 작성
+### 4-2. 첫 게시물 작성
 
 - **파일 생성 규칙**: `_posts/YYYY-MM-DD-포스트제목.md`
 - **예시 터미널 명령어**:
@@ -85,7 +119,7 @@ layout: single
 GitHub Pages + Jekyll + Minimal Mistakes 블로그 생성 테스트용 글입니다.
 ```
 
-### 3-3. 로컬 Git 커밋
+### 4-3. 로컬 Git 커밋
 
 - **GUI 방법**: Git GUI나 GitHub Desktop에서 변경 사항을 스테이징하고 커밋합니다.
 - **터미널 방법**:
@@ -95,7 +129,7 @@ git add .
 git commit -m "Add first post"
 ```
 
-### 3-4. 원격 저장소 연결 및 푸시
+### 4-4. 원격 저장소 연결 및 푸시
 
 - **GUI 방법**: GitHub Desktop에서 `Publish repository` 또는 `Push origin` 버튼 클릭
 - **터미널 방법x**:
@@ -108,6 +142,6 @@ git push -u origin main
 - `-u` 옵션은 로컬 브랜치와 원격 브랜치를 추적하도록 설정합니다.
 - 이후에는 단순히 `git push`만으로도 푸시가 가능합니다.
 
-### 3-5. 사이트 확인
+### -5. 사이트 확인
 
 - 브라우저에서 https://username.github.io로 접속해 블로그와 첫 게시물을 확인합니다.
