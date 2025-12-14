@@ -1,17 +1,23 @@
-title: Andpact Blog
+title: Andpact
 remote_theme: mmistakes/minimal-mistakes
 
 plugins:
   - jekyll-include-cache
 
-collections:
-  categories:
-    output: true
-    permalink: /categories/:name/
-
 defaults:
+  # 게시글
   - scope:
       path: ""
-      type: categories
+      type: posts
     values:
-      layout: category
+      layout: single
+      sidebar:
+        nav: sidebar
+
+  # 일반 페이지 (카테고리 포함)
+  - scope:
+      path: ""
+      type: pages
+    values:
+      sidebar:
+        nav: sidebar
