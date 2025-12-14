@@ -1,1 +1,0 @@
-# andpact.github.io
