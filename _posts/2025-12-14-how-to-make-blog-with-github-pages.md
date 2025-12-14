@@ -7,7 +7,6 @@ toc: true
 toc_label: "이 글의 내용"
 toc_icon: "list"
 toc_sticky: true
-author_profile: true
 ---
 
 ## 1. 레포지토리 생성

@@ -4,10 +4,10 @@ remote_theme: mmistakes/minimal-mistakes
 plugins:
   - jekyll-include-cache
 
-author:
-  name   : "Andpact"
-  avatar : "/assets/images/avatar.jpg"
-  bio    : "Programmer"
+# author:
+#   name   : "Andpact"
+#   avatar : "/assets/images/avatar.jpg"
+#   bio    : "Programmer"
 
 defaults:
   # 게시글
