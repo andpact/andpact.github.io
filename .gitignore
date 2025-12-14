@@ -1,0 +1,19 @@
+# Jekyll build output
+_site/
+
+# Bundler
+.bundle/
+vendor/bundle/
+
+# Ruby
+*.gem
+*.rbc
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
