@@ -1,1 +1,5 @@
-title: My Blog
+title: Andpact Blog
+remote_theme: mmistakes/minimal-mistakes
+
+plugins:
+  - jekyll-include-cache
