@@ -17,3 +17,6 @@ vendor/bundle/
 
 # Logs
 *.log
+
+# Drafts
+_drafts/
