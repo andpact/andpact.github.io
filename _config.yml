@@ -1,5 +1,9 @@
 title: Andpact
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+
+minimal_mistakes_skin: "dark" # Other options include "air", "aqua", "contrast", "dirt", "neon", "mint", "plum", "sunrise"
+
+enable_copy_code_button: true
 
 plugins:
   - jekyll-include-cache

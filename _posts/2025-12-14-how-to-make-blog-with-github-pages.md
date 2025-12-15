@@ -66,7 +66,9 @@ bundle init
 
 ```bash
 source "https://rubygems.org"
+
 gem "github-pages", group: :jekyll_plugins
+gem "jekyll-include-cache", group: :jekyll_plugins
 ```
 
 ### 3-2. 번들 설치
@@ -132,7 +134,7 @@ git commit -m "Add first post"
 ### 4-4. 원격 저장소 연결 및 푸시
 
 - **GUI 방법**: GitHub Desktop에서 `Publish repository` 또는 `Push origin` 버튼 클릭
-- **터미널 방법x**:
+- **터미널 방법**:
 
 ```bash
 git remote add origin https://github.com/username/username.github.io.git
@@ -142,6 +144,6 @@ git push -u origin main
 - `-u` 옵션은 로컬 브랜치와 원격 브랜치를 추적하도록 설정합니다.
 - 이후에는 단순히 `git push`만으로도 푸시가 가능합니다.
 
-### -5. 사이트 확인
+## 5. 사이트 확인
 
 - 브라우저에서 https://username.github.io로 접속해 블로그와 첫 게시물을 확인합니다.
