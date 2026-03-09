@@ -5,6 +5,8 @@ sidebar:
         url: /categories/git/
       - title: "Android Studio"
         url: /categories/androidstudio/
+      - title: "Xcode"
+        url: /categories/xcode/
       - title: "Business"
         url: /categories/business/
       - title: "운영체제"
