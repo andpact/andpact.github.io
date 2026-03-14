@@ -28,8 +28,9 @@ Firestore 문서가 생성될 때 후처리를 하거나,
 1. Firebase CLI 설치
 2. Firebase 로그인 및 프로젝트 연결
 3. Cloud Functions 초기화
-4. 로컬 에뮬레이터 테스트
-5. Blaze 요금제 확인 후 배포 및 로그 확인
+4. 앱에서 Cloud Functions 라이브러리 추가
+5. 로컬 에뮬레이터 테스트
+6. Blaze 요금제 확인 후 배포 및 로그 확인
 
 ## 1. Firebase CLI 설치
 
@@ -109,7 +110,43 @@ firebase init functions
 즉, 이 단계는
 "Cloud Functions를 배포할 수 있는 프로젝트 구조를 만드는 과정"입니다.
 
-## 4. 로컬 에뮬레이터로 테스트
+## 4. 앱에서 Cloud Functions 라이브러리 추가
+
+Cloud Functions를 배포하는 것과 별개로,
+안드로이드 앱에서 이 함수를 호출하려면
+앱 쪽에도 **Firebase Functions SDK** 의존성이 들어 있어야 합니다.
+
+즉, 클라이언트에서 Callable Function 같은 함수를 호출할 계획이라면
+`app/build.gradle` 또는 `app/build.gradle.kts`에
+관련 라이브러리를 추가해야 합니다.
+
+예를 들어 Android에서는 보통 Firebase BoM과 함께 아래 의존성을 넣습니다.
+
+```gradle
+implementation(platform("com.google.firebase:firebase-bom:최신버전"))
+implementation("com.google.firebase:firebase-functions")
+```
+
+Groovy 문법을 쓰는 경우에도 개념은 같습니다.
+
+```gradle
+implementation platform("com.google.firebase:firebase-bom:최신버전")
+implementation "com.google.firebase:firebase-functions"
+```
+
+그리고 의존성 추가 후에는
+프로젝트를 동기화해 앱에서 Functions API를 사용할 수 있게 해야 합니다.
+
+이 단계에서 확인할 포인트는 아래와 같습니다.
+
+- 앱 모듈 Gradle 파일에 `firebase-functions`가 들어 있는지
+- Firebase BoM을 쓰는 경우 버전 관리 방식이 일관된지
+- 앱이 실제로 Callable Function 또는 HTTP 호출 흐름을 사용할 준비가 되었는지
+
+즉, 이 단계는
+"배포된 Cloud Functions를 앱에서 호출할 수 있게 클라이언트 의존성을 준비하는 과정"입니다.
+
+## 5. 로컬 에뮬레이터로 테스트
 
 함수를 준비했다면
 바로 배포하지 말고 **로컬 에뮬레이터로 먼저 테스트**하는 것이 좋습니다.
@@ -140,7 +177,7 @@ firebase emulators:start --only functions
 즉, 운영 배포 전에
 명령어 기반으로 전체 흐름을 먼저 확인하는 단계라고 보면 됩니다.
 
-## 5. 배포 전에 Blaze 요금제 확인
+## 6. 배포 전에 Blaze 요금제 확인
 
 Cloud Functions를 실제 Firebase 프로젝트에 배포하려면
 먼저 **Firebase 프로젝트가 Blaze 요금제여야 합니다.**
@@ -159,7 +196,7 @@ Blaze는 사용량 기반 과금 방식입니다.
 즉, Cloud Functions는 "배포 명령만 알면 끝"이 아니라
 "요금제 조건과 운영 비용 구조까지 이해하고 써야 하는 기능"입니다.
 
-## 6. Cloud Functions 배포
+## 7. Cloud Functions 배포
 
 요금제 조건을 확인했다면
 이제 운영 환경으로 배포합니다.
@@ -184,7 +221,7 @@ HTTP 함수는 호출 가능한 URL이 제공되고,
 즉, 실무에서는 전체 함수를 매번 올리기보다
 필요한 함수만 골라서 배포하는 방식도 자주 사용합니다.
 
-## 7. 로그 확인과 운영 모니터링
+## 8. 로그 확인과 운영 모니터링
 
 배포가 끝났다고 해서 작업이 끝나는 것은 아닙니다.
 Cloud Functions는 이벤트 기반으로 동작하기 때문에
@@ -228,10 +265,11 @@ Firebase Cloud Functions는
 3. `firebase projects:list`
 4. `firebase use --add`
 5. `firebase init functions`
-6. `firebase emulators:start`
-7. Blaze 요금제 확인
-8. `firebase deploy --only functions`
-9. `firebase functions:log`
+6. 앱 Gradle에 `com.google.firebase:firebase-functions` 추가
+7. `firebase emulators:start`
+8. Blaze 요금제 확인
+9. `firebase deploy --only functions`
+10. `firebase functions:log`
 
 즉, 처음에는
 "함수를 어떻게 아주 정교하게 작성할까"보다
