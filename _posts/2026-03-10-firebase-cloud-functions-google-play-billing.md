@@ -93,15 +93,19 @@ Google Play 결제 검증에 사용할 서비스 계정을 준비합니다.
 - Play 검증용 서비스 계정 이름을 명확하게 만든다.
 - 나중에 Play Console에 연결할 서비스 계정 이메일 주소를 확인해 둔다.
 
-즉, 이 단계는 "서버가 어떤 계정 권한으로 Google Play 구매 정보를 조회할지 정하는 작업"입니다.
+서비스 계정을 만든 뒤에는 Google Cloud 콘솔의 **IAM** 메뉴에서
+해당 서비스 계정을 구성원으로 추가하고 **Cloud Datastore 소유자** 역할을 부여해야 합니다.
+이 역할이 없으면 Cloud Functions에서 Firestore에 데이터를 쓸 수 없습니다.
 
-## 2. Play Console 사용자 및 권한에 서비스 계정 추가하기
+즉, 이 단계는 "서버가 어떤 계정 권한으로 Google Play 구매 정보를 조회하고 Firestore에 기록할지 정하는 작업"입니다.
+
+## 2. Play Console 사용자 및 권한에 서비스 계정 초대하기
 
 Google Cloud에서 서비스 계정을 만들었다고 해서
 바로 Play Console 데이터에 접근할 수 있는 것은 아닙니다.
 
 Play Console의 **사용자 및 권한** 메뉴에서
-방금 준비한 서비스 계정을 사용자로 추가해야 합니다.
+방금 준비한 서비스 계정을 사용자로 초대해야 합니다.
 
 여기서 중요한 점은
 Google Cloud IAM 권한과 Play Console 권한이 서로 별개라는 점입니다.
